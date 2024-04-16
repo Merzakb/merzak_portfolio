@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "node -r dotenv/config ./app/backend/seed.js"
   },
   "dependencies": {
+    "@vercel/postgres": "^0.8.0",
     "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.0",
