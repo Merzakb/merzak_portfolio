@@ -1,0 +1,11 @@
+
+.icon{
+    font-size: 2rem !important; 
+}
+
+.link:hover {
+    color: #00154f;
+    box-shadow: 0 0 15px #00154f;
+    text-shadow: 0 0 2px #00154f;
+}
+  

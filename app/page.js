@@ -1,10 +1,13 @@
-import Image from "next/image";
-import '../styles/scss/globals.scss'
 
-export default function Home() {
-  return (
-   <main>
-    <h1 className="text-primary">Home</h1>
-   </main>
-  );
+import HeroHeader from './ui/components/header/HeroHeader';
+import Home from "./ui/components/home/Home"
+import './ui/styles/scss/globals.scss'
+
+export default function HomePage() {
+    return (
+        <main>
+            <HeroHeader />
+            <Home />
+        </main>
+    );
 }
