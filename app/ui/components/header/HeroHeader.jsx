@@ -5,7 +5,7 @@ import styles from './hero-header.module.css';
 
 function HeroHeader() {
   return (
-    <section className={`bg-dark pt-5 ${styles.homeSection}`}> 
+    <section className={`bg-primary pt-5 ${styles.homeSection}`}> 
       <div className={styles.homeSection} id="home">
         <div className={`container ${styles.homeContent}`}> 
           <div className="row">

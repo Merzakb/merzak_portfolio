@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
               crossOrigin="anonymous"
             />
         </Head>
-        <body className={` ${montserrat.className}`}>
+        <body className={`bg-dark ${montserrat.className}`}>
             <Header />
-            <main>
+            <main className='pb-5'>
                 {children}
             </main>
             <Footer />

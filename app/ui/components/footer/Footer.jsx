@@ -10,7 +10,7 @@ function Footer() {
     let date = new Date();
     let year = date.getFullYear();
     return (
-        <footer className="footer bg-dark text-white py-3 fs-5">
+        <footer className="footer bg-black text-white py-3 fs-5">
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-2  text-center">

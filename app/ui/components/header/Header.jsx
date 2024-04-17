@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <header className='sticky-top'>
-            <nav className={`navbar navbar-expand-lg bg-tertiary-light py-1 m-0 ${syne.className} ${isOpen ? styles.navbarOpen : ''}`}>
+            <nav className={`navbar navbar-expand-lg bg-white py-1 m-0 ${syne.className} ${isOpen ? styles.navbarOpen : ''}`}>
                 <div className="container-fluid">
                     {/* Logo */}
                     <Link href="/" className="navbar-brand">

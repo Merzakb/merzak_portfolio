@@ -22,9 +22,9 @@ function Home() {
                 <Image src={photo} className={`img-fluid`} alt="photo merzak benaissi" width={500} height={500} priority/>
               </Tilt>
             </div>
-            <div className={`col-md-8 `}>
+            <div className={`col-md-8 text-white`}>
               <h1 style={{ fontSize: "2.6em" }}>
-                PERMETTEZ-MOI DE ME<span className="text-primary"> PRÉSENTER </span>
+                PERMETTEZ-MOI DE ME<span className="text-secondary"> PRÉSENTER </span>
               </h1>
                 <p className="fs-5 my-2" style={{lineHeight: "1.5"}}> 
                     Je me suis plongé dans le monde fascinant de la programmation, et je peux dire que j&apos;ai déjà acquis une solide base, du moins je l&apos;espère… 🤷‍♂️
@@ -38,7 +38,7 @@ function Home() {
                     
                     <br />
                     <br />
-                    <i className="text-primary">
+                    <i>
                         <b>Je suis enthousiaste à l&apos;idée de continuer à développer mes compétences et de contribuer à des projets qui repoussent les limites de la technologie web.
                         </b>
                     </i>
@@ -48,7 +48,7 @@ function Home() {
             </div>
           </div>
           <div className="row">
-            <div className={`col-md-12 d-flex flex-column text-center justify-content-center `}>
+            <div className={`col-md-12 d-flex flex-column text-center justify-content-center text-white `}>
               <h1>TROUVEZ MOI SUR</h1>
               <ul className="d-flex justify-content-center list-unstyled">
                 <li className={` me-2 bg-secondary rounded-circle p-2 ${styles.link}`}>
@@ -80,7 +80,9 @@ function Home() {
                   </Link>
                 </li>
               </ul>
-              <p className="fs-6"> N&apos;hésitez pas à me <b className="bg-primary rounded p-1 text-secondary">contacter </b></p>
+              <p className="fs-6"> 
+                N&apos;hésitez pas à me <b className="bg-white rounded p-1 text-primary"><Link href="/contact"  className="text-decoration-none">contacter</Link></b>
+              </p>     
             </div>
           </div>
         </div>
