@@ -33,6 +33,7 @@ function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
+                                    <span className="visually-hidden-focusable">Github</span>
                                     <AiFillGithub />
                                 </Link>
                             </li>
@@ -43,6 +44,7 @@ function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
+                                    <span className="visually-hidden-focusable">Twitter</span>
                                     <BsTwitterX />
                                 </Link>
                             </li>
@@ -53,6 +55,7 @@ function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
+                                    <span className="visually-hidden-focusable">Linkedin</span>
                                     <FaLinkedinIn />
                                 </Link>
                             </li>

@@ -57,6 +57,7 @@ function Home() {
                     target="_blank"
                     rel="noreferrer"
                   >
+                    <span className="visually-hidden-focusable">Github</span>
                     <AiFillGithub className={` text-primary p-2  ${styles.icon}`} />
                   </Link>
                 </li>
@@ -66,6 +67,7 @@ function Home() {
                     target="_blank"
                     rel="noreferrer"
                   >
+                    <span className="visually-hidden-focusable">Twitter</span>
                     <BsTwitterX  className={` text-primary p-2  ${styles.icon}`}/>
                   </Link>
                 </li>
@@ -76,6 +78,7 @@ function Home() {
                     rel="noreferrer"
                     className={`icon-colour home-social-icons `}
                   >
+                    <span className="visually-hidden-focusable">Linkedin</span>
                     <FaLinkedinIn className={` text-primary p-2  ${styles.icon}`} />
                   </Link>
                 </li>

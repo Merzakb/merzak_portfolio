@@ -1,0 +1,21 @@
+/* Projects */
+.project-section {
+    position: relative !important;
+    padding-top: 150px !important;
+    padding-bottom: 30px !important;
+    background-image: var(--section-background-color) !important;
+}
+  
+.projectCardView {
+    box-shadow: 0 6px 7px 5px rgba(244, 175, 27, 0.5) !important;
+    color: white !important;
+    background-color: transparent !important;
+    opacity: 0.9 !important;
+    transition: all 0.5s ease 0s !important;
+    height: 100% !important;
+}
+.projectCardView:hover {
+    transform: scale(1.02) !important;
+    overflow: hidden !important;
+    box-shadow: 0 8px 9px 7px rgba(244, 175, 27, 0.5) !important;
+}

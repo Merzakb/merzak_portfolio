@@ -34,9 +34,11 @@ const Header = () => {
                         type="button"
                         onClick={toggleMobileMenu}
                     >
+                        
                         <div className={styles.bar}></div>
                         <div className={styles.bar}></div>
                         <div className={styles.bar}></div>
+                        <span className="visually-hidden-focusable">Menu mobile</span>
                     </button>
 
                     {/* links */}
