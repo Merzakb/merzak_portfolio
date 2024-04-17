@@ -1,11 +1,4 @@
-/* Projects */
-.project-section {
-    position: relative !important;
-    padding-top: 150px !important;
-    padding-bottom: 30px !important;
-    background-image: var(--section-background-color) !important;
-}
-  
+/* Projects */ 
 .projectCardView {
     box-shadow: 0 6px 7px 5px rgba(244, 175, 27, 0.5) !important;
     color: white !important;
