@@ -5,6 +5,7 @@ import { fetchProjects } from "@/app/backend/data";
 
 async function Projects() {
     const projects = await fetchProjects();
+    console.log(projects[1].name);
     
     return (
         <div className="container-fluid container-xl text-white project-section">
@@ -19,13 +20,13 @@ async function Projects() {
                     <div className="row justify-content-center mx-0 my-5">
                         {projects.map((project) => (
                             <div key={project.id} className={`col-sm-6 col-lg-4 p-4 ${styles.projectCard}`}>
-                                <CardProject
-                                    images={project.images[0]}
+                                <CardProject {...project}
+                                   /* images={project.images}
                                     name={project.name}
                                     technologies={project.technologies}
                                     title={project.title}
                                     github_url={project.github_url}
-                                    demo_url={project.demo_url}
+                                    demo_url={project.demo_url}*/
                                 />
                             </div>
                         ))}

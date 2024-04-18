@@ -5,15 +5,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from "./projects.module.css"
 
-function ProjectCards(props) {
+function ProjectCards({name, title, images, technologies, github_url, demo_url}) {
+    // Supprimer les espaces du nom
+    const formattedName = name.replace(/\s+/g, '-');
+
     return (
         <div className={`card ${styles.projectCardView}`}>
-            <Image src={props.images} alt="card-img" width={330} height={220} priority className="card-img-top p-3"/>
+            <Image src={images[0]} alt="card-img" width={330} height={220} priority  className="card-img-top p-3"/>
             <div className="card-body">
-                <h2 className="card-title">{props.name}</h2>
-                <p className="card-text">{props.title}</p>
+                <h2 className="card-title">{name}</h2>
+                <p className="card-text">{title}</p>
                 <div className="text-start my-2">
-                    {props.technologies.map((tech, index) => (
+                    {technologies.map((tech, index) => (
                         <span key={index} className="badge bg-white text-primary me-2 mb-2">
                             {tech}
                         </span>
@@ -22,7 +25,7 @@ function ProjectCards(props) {
                 <div className="d-flex flex-wrap justify-content-center">
                     <div className="mt-2">
                         <a 
-                            href={props.github_url} 
+                            href={github_url} 
                             className="btn btn-secondary text-primary fw-bold" 
                             target="_blank"
                             rel="noopener noreferrer"
@@ -31,10 +34,10 @@ function ProjectCards(props) {
                             &nbsp; {"Github"}
                         </a>
                     </div>
-                    {props.demo_url && (
+                    {demo_url && (
                         <div className="ms-2 mt-2">
                             <a
-                                href={props.demo_url}
+                                href={demo_url}
                                 className="btn btn-secondary text-primary fw-bold" 
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -46,7 +49,7 @@ function ProjectCards(props) {
                     )}
                 </div>
                 <div className="mt-5 text-end">
-                    <Link href={`/project/${props.id}`} className="btn btn-tertiary text-primary">
+                    <Link href={`/projects/${formattedName}`} className="btn btn-tertiary text-primary">
                         plus d&apos;info...
                     </Link>
                 </div>

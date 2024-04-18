@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
         </Head>
         <body className={`bg-dark ${montserrat.className}`}>
             <Header />
-            <main className='pb-5'>
+            <main className='pb-5 m-0  row justify-content-center'>
                 {children}
             </main>
             <Footer />

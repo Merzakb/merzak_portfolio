@@ -1,4 +1,5 @@
 const { sql } = require('@vercel/postgres');
+const { db } = require('@vercel/postgres');
 const { User, Project } = require('./definitions');
 
 /**
@@ -65,3 +66,18 @@ export async function fetchProjectById(id) {
         throw new Error('Failed to fetch project by ID.');
     }
 }
+
+export async function fetchProjectByName(name) {
+    try {
+        const data = await sql`
+            SELECT * FROM projects WHERE name = ${name}
+        `;
+        
+        return data.rows[0];
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch project by name.');
+    }
+}
+
+  
