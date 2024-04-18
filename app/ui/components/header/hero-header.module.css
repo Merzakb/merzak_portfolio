@@ -32,25 +32,9 @@
       transform: rotate(0deg);
     }
   }
-  #tsparticles {
-    position: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    width: 100%;
-    height: 100%;
-  }
-  
+
   .home-header {
     padding-top: 80px !important;
-  }
-  
-  .home-section {
-    position: relative;
-    z-index: -1;
-    background-position: top center;
-    background-repeat: no-repeat;
-    padding-bottom: 30px !important;
-    padding-top: 30px !important;
   }
   
   .home-content {
@@ -88,4 +72,7 @@
       display: none !important;
     }
   }
-  
+
+.gradientBackground {
+    background: linear-gradient(to bottom, #00154f, #001738);
+}

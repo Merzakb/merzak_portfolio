@@ -13,7 +13,7 @@ import photo from "../../assets/logo/logo-photo.png";
 
 function Home() {
   return (
-    <section className= "mt-5 py-5" id="about">
+    <section className= "pb-5" id="about">
       <div className="container-fluid">
         <div className="container">
           <div className="row my-5 py-5">
@@ -22,28 +22,18 @@ function Home() {
                 <Image src={photo} className={`img-fluid`} alt="photo merzak benaissi" width={500} height={500} priority/>
               </Tilt>
             </div>
-            <div className={`col-md-8 text-white`}>
+            <div className={`col-md-8 text-white text-wrap`}>
               <h1 style={{ fontSize: "2.6em" }}>
                 PERMETTEZ-MOI DE ME<span className="text-secondary"> PRÉSENTER </span>
               </h1>
-                <p className="fs-5 my-2" style={{lineHeight: "1.5"}}> 
+                <p className="fs-5 my-2 text-break lh-base"> 
                     Je me suis plongé dans le monde fascinant de la programmation, et je peux dire que j&apos;ai déjà acquis une solide base, du moins je l&apos;espère… 🤷‍♂️
                     <br />
-                    <br />Je suis à l&apos;aise avec l&apos;univers <i className="bg-secondary rounded px-1 text-primary"><b>JavaScript</b></i> et ses différentes bibliothèques et frameworks tel que 
-                    <i className="bg-secondary rounded px-1 text-primary ms-1"><b>React</b></i>, 
-                    <i className="bg-secondary rounded px-1 text-primary ms-1"><b>Next.js</b></i>,  
-                    <i className="bg-secondary rounded px-1 text-primary ms-1"><b>Bootstrap</b></i>, 
-                    <i className="bg-secondary rounded px-1 text-primary ms-1"><b>Sass</b></i>, 
-                    <i className="bg-secondary rounded px-1 text-primary ms-1"><b>Node.js</b></i> 
-                    
+                    <br />
+                    Je suis à l&apos;aise avec l&apos;univers <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary">JavaScript</span> et ses différentes bibliothèques et frameworks tel que <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">React</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Next.js</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Bootstrap</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Sass</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Node.js</span>... 
                     <br />
                     <br />
-                    <i>
-                        <b>Je suis enthousiaste à l&apos;idée de continuer à développer mes compétences et de contribuer à des projets qui repoussent les limites de la technologie web.
-                        </b>
-                    </i>
-                    <br />
-                    <br />
+                    <span className="fst-italic fw-bolder">Je suis enthousiaste à l&apos;idée de continuer à développer mes compétences et de contribuer à des projets qui repoussent les limites de la technologie web.</span>
                 </p>
             </div>
           </div>
@@ -76,7 +66,6 @@ function Home() {
                     href="https://www.linkedin.com/in/merzak-b-0300b9289/"
                     target="_blank"
                     rel="noreferrer"
-                    className={`icon-colour home-social-icons `}
                   >
                     <span className="visually-hidden-focusable">Linkedin</span>
                     <FaLinkedinIn className={` text-primary p-2  ${styles.icon}`} />
@@ -84,7 +73,7 @@ function Home() {
                 </li>
               </ul>
               <p className="fs-6"> 
-                N&apos;hésitez pas à me <b className="bg-white rounded p-1 text-primary"><Link href="/contact"  className="text-decoration-none">contacter</Link></b>
+                N&apos;hésitez pas à me <span className={`fw-bolder bg-white rounded p-1 ${styles.link}`}><Link href="/contact"  className={`text-decoration-none text-primary`}>contacter</Link></span>
               </p>     
             </div>
           </div>
