@@ -1,6 +1,5 @@
 import React from "react";
 import Image from 'next/image';
-import Github from "../ui/components/about/Github";
 import Techstack from "../ui/components/about/Techstack";
 import Aboutcard from "../ui/components/about/AboutCard";
 import Toolstack from "../ui/components/about/Toolstack";
@@ -29,7 +28,6 @@ function AboutPage() {
           <span className="text-secondary fw-bolder">Les outils</span> que j&apos;utilise
         </h2>
         <Toolstack />
-        <Github />
       </div>
     </div>
   );
