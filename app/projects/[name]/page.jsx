@@ -26,6 +26,7 @@ async function projectDetailsPage({params})  {
         <div className='container-fluid row justify-content-center py-5'>
            <div>
                 <Link href="/projects" className='bg-secondary rounded-circle p-2'>
+                        <span className="visually-hidden-focusable">Retour</span>
                         < FaArrowLeft className='text-primary' />
                 </Link>
            </div>

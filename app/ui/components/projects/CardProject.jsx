@@ -50,7 +50,7 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url})
                 </div>
                 <div className="mt-5 text-end">
                     <Link href={`/projects/${formattedName}`} className="btn btn-tertiary text-primary">
-                        plus d&apos;info...
+                        plus d&apos;infos...
                     </Link>
                 </div>
             </div>
