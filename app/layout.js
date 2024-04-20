@@ -1,9 +1,9 @@
-import { montserrat, syne } from './ui/assets/fonts/fonts';
+import { montserrat, syne } from '@/ui/assets/fonts/fonts';
 import Head from 'next/head';
-import './ui/styles/scss/globals.scss'
+import '@/ui/styles/scss/globals.scss'
 import "./globals.css";
-import Header from './ui/components/header/Header';
-import Footer from './ui/components/footer/Footer';
+import Header from '@/ui/components/header/Header';
+import Footer from '@/ui/components/footer/Footer';
 
 export const metadata = {
   title: "Merzak Benaissi | Portfolio",

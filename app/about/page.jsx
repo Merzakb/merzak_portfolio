@@ -1,9 +1,9 @@
 import React from "react";
 import Image from 'next/image';
-import Techstack from "../ui/components/about/Techstack";
-import Aboutcard from "../ui/components/about/AboutCard";
-import Toolstack from "../ui/components/about/Toolstack";
-import laptopImg from "../ui/assets/about.png";
+import Techstack from "@/ui/components/about/Techstack";
+import Aboutcard from "@/ui/components/about/AboutCard";
+import Toolstack from "@/ui/components/about/Toolstack";
+import laptopImg from "@/ui/assets/about.png";
 
 function AboutPage() {
   return (

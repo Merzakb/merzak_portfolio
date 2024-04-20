@@ -1,4 +1,4 @@
-import { fetchProjectByName } from '@/app/backend/data' 
+import { fetchProjectByName } from '@/backend/data' 
 import Image from 'next/image'
 import Link from 'next/link';
 import { AiFillGithub } from "react-icons/ai";

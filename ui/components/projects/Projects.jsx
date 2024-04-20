@@ -1,7 +1,7 @@
 import React from "react";
 import CardProject from "./CardProject";
 import styles from "./projects.module.css";
-import { fetchProjects } from "@/app/backend/data";
+import { fetchProjects } from "@/backend/data";
 
 async function Projects() {
     const projects = await fetchProjects();

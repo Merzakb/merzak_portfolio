@@ -1,5 +1,4 @@
 const { sql } = require('@vercel/postgres');
-const { db } = require('@vercel/postgres');
 const { User, Project } = require('./definitions');
 
 /**
