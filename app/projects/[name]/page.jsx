@@ -42,23 +42,25 @@ async function projectDetailsPage({params})  {
                                 <h2 className="card-text">{project.title}</h2>
                                 <div className="text-start my-2">
                                     {project.technologies.map((tech, index) => (
-                                        <span key={index} className="badge bg-tertiary text-primary me-2 mb-2">
-                                            {tech}
+                                        <span key={index} className="badge bg-white text-primary me-2 mb-2">
+                                            {tech.charAt(0).toUpperCase() + tech.slice(1)}
                                         </span>
                                     ))}
                                 </div>
                                 <div className="d-flex flex-wrap justify-content-end">
-                                    <div className="mt-2">
-                                        <a 
-                                            href={project.github_url} 
-                                            className="btn btn-secondary text-primary fw-bold" 
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <AiFillGithub />
-                                            &nbsp; {"Github"}
-                                        </a>
-                                    </div>
+                                    {project.github_url && (
+                                        <div className="mt-2">
+                                            <a 
+                                                href={project.github_url} 
+                                                className="btn btn-secondary text-primary fw-bold" 
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                <AiFillGithub />
+                                                &nbsp; {"Github"}
+                                            </a>
+                                        </div>
+                                    )}
                                     {project.demo_url && (
                                         <div className="ms-2 mt-2">
                                             <a

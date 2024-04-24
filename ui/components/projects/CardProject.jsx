@@ -18,22 +18,24 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url})
                 <div className="text-start my-2">
                     {technologies.map((tech, index) => (
                         <span key={index} className="badge bg-white text-primary me-2 mb-2">
-                            {tech}
+                            {tech.charAt(0).toUpperCase() + tech.slice(1)}
                         </span>
                     ))}
                 </div>
                 <div className="d-flex flex-wrap justify-content-center">
-                    <div className="mt-2">
-                        <a 
-                            href={github_url} 
-                            className="btn btn-secondary text-primary fw-bold" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <AiFillGithub />
-                            &nbsp; {"Github"}
-                        </a>
-                    </div>
+                    {github_url && (
+                        <div className="mt-2">
+                            <a 
+                                href={github_url} 
+                                className="btn btn-secondary text-primary fw-bold" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <AiFillGithub />
+                                &nbsp; {"Github"}
+                            </a>
+                        </div>
+                    )}
                     {demo_url && (
                         <div className="ms-2 mt-2">
                             <a
