@@ -21,7 +21,7 @@ const resizeObserverOptions = {};
 
 const maxWidth = 800;
 
-export default function Sample({pdf}) {
+export default function PDFViewer({pdf}) {
     const [file, setFile] = useState(pdf)
     const [numPages, setNumPages] = useState();
     const [containerRef, setContainerRef] = useState(null);
