@@ -30,7 +30,11 @@ export default function NavLinks({closeMobileMenu}) {
                             className={clsx(
                                 'nav-link text-primary rounded px-2 mx-2 mb-md-3 fs-5 fs-5',
                                 styles.linkHover,
-                                { 'bg-secondary': pathname === link.href }
+                                {
+                                    ["bg-secondary"]: 
+                                        (pathname.startsWith(link.href) && link.name !== 'Accueil') ||
+                                        (pathname === link.href && link.name === 'Accueil')
+                                }
                             )}
                         >
                             <LinkIcon className="me-2" />
