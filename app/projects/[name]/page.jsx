@@ -77,9 +77,21 @@ async function projectDetailsPage({params})  {
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.descriptions} bg-white fs-5`}>
-                    <h2 className='text-primary'>Context du projet</h2>
-                    <p className='text-black'>{project.description}</p>
+                <div className={`${styles.descriptions} bg-white fs-5 p-4 `}>
+                   <div>
+                        <h2 className='text-primary fw-bolder'>Contexte du projet</h2>
+                        <p className='text-black'>{project.description}</p>
+                   </div>
+                    <div className='mt-2'>
+                        <h2 className='text-primary fw-bolder'>Compétences acquises</h2>
+                        <ul style={{ listStyleType: 'none', padding: 0 }}>
+                            {project.skills?.map((tech, index) => (
+                                <li key={index} className="text-black me-2 mb-2">
+                                    <span className='me-2 text-primary fw-bold'>&bull;</span> {tech}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </article>
         </div>
