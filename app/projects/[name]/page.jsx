@@ -6,6 +6,7 @@ import { CgWebsite } from "react-icons/cg";
 import { FaArrowLeft } from "react-icons/fa";
 import { notFound } from 'next/navigation'
 import styles from './page.module.css'
+import PDFViewer from "@/ui/components/pdf/PDFViewer"
 
 async function projectDetailsPage({params})  {
     // Transforme le slug en nom de projet réel
@@ -18,6 +19,16 @@ async function projectDetailsPage({params})  {
     
     const project = await fetchProjectByName(name)
 
+    //afficher le nom des documents
+    let extractedName = '';
+    if (project.documents) {
+        const fileName = project.documents;
+        const nameWithSpaces = fileName.replace(/_/g, ' ');
+        const nameWithoutExtension = nameWithSpaces.replace('.pdf', '');
+        const parts = nameWithoutExtension.split('/');
+        extractedName = parts[parts.length - 1];
+    }
+    
     if (!project) {
         notFound()
     } 
@@ -96,6 +107,13 @@ async function projectDetailsPage({params})  {
                     </div>
                 </div>
             </article>
+            <div className='my-3 py-2 bg-tertiary'></div>
+            {project.documents && (
+                <div className='my-5 text-white text-center container col-sm-11 col-lg-10'>
+                    <h2 className=''>{extractedName}</h2>
+                    <PDFViewer pdf={project.documents} />
+                </div>
+            )}
         </div>
     )
 }
