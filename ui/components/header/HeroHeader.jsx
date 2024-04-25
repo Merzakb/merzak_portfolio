@@ -22,7 +22,7 @@ function HeroHeader() {
                     <strong className={`text-secondary main-name ${styles.mainName}`}> Merzak BENAISSI</strong> 
                 </h1>
                 <div className={`my-5 d-flex justify-content-end ${styles.typewriterWrapper}`} > 
-                    <h1 className="text-secondary">Intégrateur web</h1>
+                    <h1 className="text-secondary">Développeur web frontend</h1>
                 </div>
             </div>
 

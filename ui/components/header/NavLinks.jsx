@@ -28,7 +28,7 @@ export default function NavLinks({closeMobileMenu}) {
                             onClick={closeMobileMenu}
                             href={link.href}
                             className={clsx(
-                                'nav-link text-primary rounded px-2 mx-2 mb-md-3 fs-5 fs-5',
+                                'nav-link text-primary rounded my-1 my-md-0 px-2 mx-2 mb-md-3 fs-5 fs-5',
                                 styles.linkHover,
                                 {
                                     ["bg-secondary"]: 

@@ -10,7 +10,7 @@ import styles from "./about.module.css"
 
 function Toolstack() {
     return (
-        <div className="row justify-content-center pb-5">
+        <div className="row justify-content-center">
             <div className={`${styles.techIcons} col-sm-4 col-md-2 text-center border border-3 border-secondary `} data-bs-toggle="tooltip" data-bs-placement="top" title="VSCode">
                 <SiVisualstudiocode  />
             </div>

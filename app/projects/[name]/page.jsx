@@ -107,11 +107,13 @@ async function projectDetailsPage({params})  {
                     </div>
                 </div>
             </article>
-            <div className='my-3 py-2 bg-tertiary'></div>
             {project.documents && (
-                <div className='my-5 text-white text-center container col-sm-11 col-lg-10'>
-                    <h2 className=''>{extractedName}</h2>
-                    <PDFViewer pdf={project.documents} />
+                <div>
+                    <div className='my-3 py-1 bg-tertiary'></div>
+                    <div className='my-5 text-white text-center container col-sm-11 col-lg-10'>
+                        <h2 className=''>{extractedName}</h2>
+                        <PDFViewer pdf={project.documents} />
+                    </div>
                 </div>
             )}
         </div>
