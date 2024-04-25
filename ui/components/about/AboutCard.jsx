@@ -7,7 +7,7 @@ function AboutCard() {
             <div className="card bg-transparent text-white border-0">
                 <div className="card-body ">
                     <blockquote className="blockquote mb-0">
-                        <p style={{ textAlign: "justify" }}>
+                        <p className="fs-5 lh-md" >
                             Bonjour à tous, je suis <span className="text-secondary">Merzak BENAISSI </span>
                             et je réside à <span className="text-secondary"> Strasbourg</span>, en France.
                             <br />
