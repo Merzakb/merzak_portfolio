@@ -7,6 +7,7 @@ import emailjs from '@emailjs/browser';
 import { AiFillGithub } from "react-icons/ai";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
+import ReCAPTCHA from 'react-google-recaptcha';
 import Errors from '../errors/Errors';
 import Spinner from '../spinner/Spinner'; 
 import styles from "./contact.module.css";
@@ -17,9 +18,14 @@ const Contact = () => {
     const [modalMessage, setModalMessage] = useState('');
     const [sending, setSending] = useState(false); 
     const [error, setError] = useState(null);
+    const [captchaValue, setCaptchaValue] = useState(null); // État local pour stocker la valeur de la captcha
     const form = useRef();
 
     function sendEmail() {
+        if (!captchaValue) {
+            return;
+        }
+
         setSending(true); 
 
         const formData = new FormData(form.current); 
@@ -30,7 +36,8 @@ const Contact = () => {
             from_name: name,
             from_email: email,
             to_name: "Merzak",
-            message
+            message,
+            "g-recaptcha-response": captchaValue 
         }
         
         emailjs.init({
@@ -39,9 +46,6 @@ const Contact = () => {
 
         emailjs
             .send("service_45vy43x", "template_16e8aju", template )
-            // .sendForm(process.env.EMAILJS_SERVICE_ID, process.env.EMAILJS_TEMPLATE_ID, form.current, 
-            //     { publicKey: process.env.EMAILJS_PUBLIC_KEY_ID 
-            // })
             .then(() => {
                 setModalMessage("Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.");
                 setShowModal(true);
@@ -107,8 +111,14 @@ const Contact = () => {
                         aria-describedby={errors.message && "message-error"}
                     ></textarea>
                 </div>
+                <ReCAPTCHA 
+                    sitekey="6Ld67cYpAAAAAJdQNA0vura9LGIlhmT2bhPUnWlx"
+                    onChange={(token) => {
+                        setCaptchaValue(token); 
+                    }}
+                />
                 <div className='d-flex justify-content-center mt-5'>
-                    <button type="submit" className="btn btn-secondary text-primary fw-bolder text-center">
+                    <button type="submit" className={`btn btn-secondary text-primary fw-bolder text-center ${!captchaValue ? 'disabled' : ''}`} disabled={!captchaValue}>
                         {sending ?   <Spinner /> : 'Envoyer'}
                     </button>
                 </div>
