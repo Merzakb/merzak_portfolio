@@ -12,7 +12,7 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url})
     return (
         <div className={`card ${styles.projectCardView}`}>
             <Image src={images[0]} alt="card-img" width={330} height={220} priority  className="card-img-top p-3"/>
-            <div className="card-body">
+            <div className="card-body row">
                 <h2 className="card-title">{name}</h2>
                 <p className="card-text">{title}</p>
                 <div className="text-start my-2">
@@ -50,7 +50,7 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url})
                         </div>
                     )}
                 </div>
-                <div className="mt-5 text-end">
+                <div className="mt-5 text-end align-self-end">
                     <Link href={`/projects/${formattedName}`} className="btn btn-tertiary text-primary">
                         plus d&apos;infos...
                     </Link>
