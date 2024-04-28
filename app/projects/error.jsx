@@ -5,12 +5,13 @@ import { BiError } from "react-icons/bi";
 
 const Error = () => {
     return (
-        <div className="notFound text-white d-flex flex-column align-items-center justify-content-center">
-            <p className="notFound__paragraph1 text-secondary"><BiError /></p>
-            <p className="notFound__paragraph2">Une erreur est survenue !</p>
-            <p className="fs-3 text-tertiary">Impossible de récupérer les données des projets. <br/> Veuillez réessayer ultérieurement !</p>
+        <div className="text-white px-3 py-5 px-md-5 row justify-content-center">
+            <p className="notFound__paragraph1 text-danger text-center "><BiError className='text-center m-auto'/></p>
+            <p className="notFound__paragraph2 text-center text-danger" >Une erreur est survenue !</p>
+            <p className="fs-5 text-center">Impossible de récupérer les données des projets. <br/> Veuillez réessayer ultérieurement !</p>
         </div>
     )
 }
 
 export default Error
+

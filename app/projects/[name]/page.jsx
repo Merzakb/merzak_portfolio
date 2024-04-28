@@ -6,6 +6,7 @@ import { CgWebsite } from "react-icons/cg";
 import { FaArrowLeft } from "react-icons/fa";
 import { notFound } from 'next/navigation'
 import styles from './page.module.css'
+import { syne } from '@/ui/assets/fonts/fonts';
 import PDFViewer from "@/ui/components/pdf/PDFViewer"
 
 async function projectDetailsPage({params})  {
@@ -13,7 +14,7 @@ async function projectDetailsPage({params})  {
     const transformFromSlug = (slug) => {
         return slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
     }
-    // Obtenez le nom du projet du paramètre d'URL
+    // Obtenir le nom du projet du paramètre d'URL
     const slug = params.name
     const name = transformFromSlug(slug);
     
@@ -28,6 +29,13 @@ async function projectDetailsPage({params})  {
         const parts = nameWithoutExtension.split('/');
         extractedName = parts[parts.length - 1];
     }
+
+    //formated date
+    function formatDate(dateString) {
+        const options = { month: 'long', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('fr-FR', options);
+    }
+    const formattedDate = formatDate(project.createdat);
     
     if (!project) {
         notFound()
@@ -49,7 +57,8 @@ async function projectDetailsPage({params})  {
                         </div>
                         <div className={`${styles.cardBody} col-md-6 bg-dark text-white`}>
                             <div className="card-body">
-                                <h1 className="card-title text-uppercase text-secondary fw-bold">{project.name}</h1>
+                                <h1 className={`card-title text-uppercase text-secondary fw-bold ${syne.className}`}>{project.name}</h1>
+                                <p className="text-tertiary fs-6 pt-0 mt-0 mb-3">{formattedDate}</p>
                                 <h2 className="card-text">{project.title}</h2>
                                 <div className="text-start my-2">
                                     {project.technologies.map((tech, index) => (

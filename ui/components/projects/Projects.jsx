@@ -1,10 +1,10 @@
 import React from "react";
 import CardProject from "./CardProject";
 import styles from "./projects.module.css";
-import { fetchProjects } from "@/backend/data";
+import { fetchProjectsOrderedByDesc } from "@/backend/data";
 
 async function Projects() {
-    const projects = await fetchProjects();
+    const projects = await fetchProjectsOrderedByDesc();
     
     return (
         <div className="container-fluid container-xl text-white project-section">

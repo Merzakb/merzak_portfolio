@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 function NotFound() {
     return (
-        <div className="notFound text-white d-flex flex-column align-items-center justify-content-center">
-            <p className="notFound__paragraph1 text-secondary">404</p>
-            <p className="notFound__paragraph2">Oups! le projet que vous cherchez n&apos;existe pas.</p>
-            <Link href="/projects" className="notFound__paragraph3 text-tertiary">Retourner sur la page des projets</Link>
+        <div className="text-white px-3 py-5 px-md-5 row justify-content-center">
+            <p className="notFound__paragraph1 text-danger text-center ">404</p>
+            <p className="notFound__paragraph2 text-center text-danger ">Oups! le projet que vous cherchez n&apos;existe pas.</p>
+            <p className="text-tertiary text-center"><Link href="/projects" className="text-tertiary notFound__paragraph3">Retourner sur la page des projets</Link></p>
         </div>
     )
 }

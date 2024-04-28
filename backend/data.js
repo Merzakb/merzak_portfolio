@@ -30,6 +30,35 @@ export async function fetchProjects() {
     }
 }
 
+
+/**
+ * Récupère tous les projets ordonné de plus récent au plus ancien selon la createdat
+ * @returns {Promise<Project[]>} Une promesse résolue avec un tableau de projets 
+ */
+export async function fetchProjectsOrderedByDesc() {
+    try {
+        const data = await sql`SELECT * FROM projects ORDER BY createdat DESC`;
+        return data.rows;
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch projects.');
+    }
+}
+
+/**
+ * Récupère les 3 dernirs projets les plus récents 
+ * @returns {Promise<Project[]>} Une promesse résolue avec un tableau de projets 
+ */
+export async function fetchRecentProjects() {
+    try {
+        const data = await sql`SELECT * FROM projects ORDER BY createdat DESC LIMIT 3`;
+        return data.rows;
+    } catch (error) {
+        console.error('Database Error:', error);
+        throw new Error('Failed to fetch recent projects.');
+    }
+}
+
 /**
  * Récupère les projets filtrés par technologies.
  * @param {string[]} technologies Les technologies à filtrer.
