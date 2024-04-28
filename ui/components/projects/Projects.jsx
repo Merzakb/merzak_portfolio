@@ -5,7 +5,6 @@ import { fetchProjects } from "@/backend/data";
 
 async function Projects() {
     const projects = await fetchProjects();
-    console.log(projects[1].name);
     
     return (
         <div className="container-fluid container-xl text-white project-section">

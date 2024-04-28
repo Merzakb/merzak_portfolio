@@ -5,16 +5,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from "./projects.module.css"
 
-function ProjectCards({name, title, images, technologies, github_url, demo_url}) {
+function ProjectCards({name, title, images, technologies, github_url, demo_url, createdat}) {
     // Supprimer les espaces du nom
     const formattedName = name.replace(/\s+/g, '-');
 
+    //formated date
+    function formatDate(dateString) {
+        const options = { month: 'long', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('fr-FR', options);
+    }
+    const formattedDate = formatDate(createdat);
+    
     return (
         <div className={`card ${styles.projectCardView}`}>
             <Image src={images[0]} alt="card-img" width={330} height={220} priority  className="card-img-top p-3"/>
             <div className="card-body row">
-                <h2 className="card-title">{name}</h2>
-                <p className="card-text">{title}</p>
+                <h2 className="card-title mb-0">{name}</h2>
+                <p className="text-tertiary fs-6 pt-0 mt-0">{formattedDate}</p>
+                <p className="card-text fs-4">{title}</p>
                 <div className="text-start my-2">
                     {technologies.map((tech, index) => (
                         <span key={index} className="badge bg-white text-primary me-2 mb-2">
