@@ -10,7 +10,7 @@ async function Projects() {
         <div className="container-fluid container-xl text-white project-section">
             <div className="justify-content-center">
                 <h1 className="project-heading text-center">
-                    Mes derniers <strong className="text-secondary">Projets</strong>
+                    Mes <strong className="text-secondary">Projets</strong>
                 </h1>
                 <p className="text-white text-center">
                     Voici quelques projets sur lesquels j&apos;ai récemment travaillé.
@@ -18,7 +18,7 @@ async function Projects() {
                 <div className="row justify-content-center mx-0 my-5">
                     <div className="row justify-content-center mx-0 my-5">
                         {projects.map((project) => (
-                            <div key={project.id} className={`col-sm-6 col-lg-4 p-4 ${styles.projectCard}`}>
+                            <div key={project.id} className={`col-sm-6 col-xl-4 p-4 ${styles.projectCard}`}>
                                 <CardProject {...project}
                                    /* images={project.images}
                                     name={project.name}

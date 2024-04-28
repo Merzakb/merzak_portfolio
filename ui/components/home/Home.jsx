@@ -1,15 +1,13 @@
-"use client"
-
 import React from "react";
 import Link from 'next/link';
-import Image from 'next/image';
-import Tilt from "react-parallax-tilt";
 import { AiFillGithub } from "react-icons/ai";
 import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import styles from './home.module.css';
+import LastProjectsHome from "./LastProjectsHome";
+import TiltImage from "./TiltImage";
 
-import photo from "../../assets/logo/logo-white-yellow.png";
+
 
 function Home() {
     return (
@@ -28,12 +26,9 @@ function Home() {
                                 Je suis à l&apos;aise avec l&apos;univers <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary">JavaScript</span> et ses différentes bibliothèques et frameworks tel que <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">React</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Next.js</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Bootstrap</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Sass</span>, <span className="fst-italic fw-bolder bg-secondary rounded px-1 text-primary ms-1">Node.js</span>... 
                             </p>
                         </div>
-                        <div className="col-md-4 order-md-0">
-                            <Tilt>
-                                <Image src={photo} className={`img-fluid`} alt="logo merzak" width={500} height={500} priority/>
-                            </Tilt>
-                        </div>
+                        <TiltImage />
                     </div>
+                    <LastProjectsHome />
                     <div className="row">
                         <div className={`col-md-12 d-flex flex-column text-center justify-content-center text-white `}>
                             <h1>TROUVEZ MOI SUR</h1>
