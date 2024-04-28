@@ -4,6 +4,7 @@ import '@/ui/styles/scss/globals.scss'
 import "./globals.css";
 import Header from '@/ui/components/header/Header';
 import Footer from '@/ui/components/footer/Footer';
+import BackToTop from "@/ui/components/navigation/BackToTop"
 
 export const metadata = {
   title: "Merzak Benaissi | Portfolio",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
             <main className='pb-5 m-0  row justify-content-center align-items-stretch min-vh-100'>
                 {children}
             </main>
+            <BackToTop />
             <Footer />
         </body>
     </html>
