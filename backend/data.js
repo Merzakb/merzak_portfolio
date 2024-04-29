@@ -1,5 +1,6 @@
 const { sql } = require('@vercel/postgres');
 const { User, Project } = require('./definitions');
+import { unstable_noStore as noStore } from 'next/cache';
 
 /**
  * Récupère un utilisateur par son adresse e-mail.
@@ -7,6 +8,7 @@ const { User, Project } = require('./definitions');
  * @returns {Promise<User>} Une promesse résolue avec l'utilisateur trouvé.
  */
 export async function getUser(email) {
+    noStore();
     try {
         const user = await sql`SELECT * FROM users WHERE email=${email}`;
         return user.rows[0];
@@ -21,6 +23,7 @@ export async function getUser(email) {
  * @returns {Promise<Project[]>} Une promesse résolue avec un tableau de projets.
  */
 export async function fetchProjects() {
+    noStore();
     try {
         const data = await sql`SELECT * FROM projects`;
         return data.rows;
@@ -36,6 +39,7 @@ export async function fetchProjects() {
  * @returns {Promise<Project[]>} Une promesse résolue avec un tableau de projets 
  */
 export async function fetchProjectsOrderedByDesc() {
+    noStore();
     try {
         const data = await sql`SELECT * FROM projects ORDER BY createdat DESC`;
         return data.rows;
@@ -50,6 +54,7 @@ export async function fetchProjectsOrderedByDesc() {
  * @returns {Promise<Project[]>} Une promesse résolue avec un tableau de projets 
  */
 export async function fetchRecentProjects() {
+    noStore();
     try {
         const data = await sql`SELECT * FROM projects ORDER BY createdat DESC LIMIT 3`;
         return data.rows;
@@ -65,6 +70,7 @@ export async function fetchRecentProjects() {
  * @returns {Promise<Project[]>} Une promesse résolue avec un tableau de projets filtrés.
  */
 export async function fetchFilteredProjects(technologies) {
+    noStore();
     try {
         const data = await sql`
             SELECT * FROM projects
@@ -83,6 +89,7 @@ export async function fetchFilteredProjects(technologies) {
  * @returns {Promise<Project>} Une promesse résolue avec le projet trouvé.
  */
 export async function fetchProjectById(id) {
+    noStore();
     try {
         const data = await sql`
             SELECT * FROM projects
@@ -96,6 +103,7 @@ export async function fetchProjectById(id) {
 }
 
 export async function fetchProjectByName(name) {
+    noStore();
     try {
         const data = await sql`
             SELECT * FROM projects WHERE name = ${name}

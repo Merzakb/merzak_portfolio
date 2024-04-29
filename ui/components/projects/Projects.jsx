@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import CardProject from "./CardProject";
 import styles from "./projects.module.css";
 import { fetchProjectsOrderedByDesc } from "@/backend/data";
+import Spinner from "@/ui/components/spinner/Spinner";
 
 async function Projects() {
     const projects = await fetchProjectsOrderedByDesc();
@@ -19,14 +20,17 @@ async function Projects() {
                     <div className="row justify-content-center mx-0 my-5">
                         {projects.map((project) => (
                             <div key={project.id} className={`col-sm-6 col-xl-4 p-4 ${styles.projectCard}`}>
-                                <CardProject {...project}
-                                   /* images={project.images}
-                                    name={project.name}
-                                    technologies={project.technologies}
-                                    title={project.title}
-                                    github_url={project.github_url}
-                                    demo_url={project.demo_url}*/
-                                />
+
+                                <Suspense fallback={<Spinner />}>
+                                    <CardProject {...project}
+                                       /* images={project.images}
+                                        name={project.name}
+                                        technologies={project.technologies}
+                                        title={project.title}
+                                        github_url={project.github_url}
+                                        demo_url={project.demo_url}...*/
+                                    />
+                                </Suspense>
                             </div>
                         ))}
                     </div>

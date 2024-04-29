@@ -1,4 +1,5 @@
 import React from "react";
+import { Suspense } from "react";
 import Link from 'next/link';
 import { AiFillGithub } from "react-icons/ai";
 import { BsTwitterX } from "react-icons/bs";
@@ -6,6 +7,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import styles from './home.module.css';
 import LastProjectsHome from "./LastProjectsHome";
 import TiltImage from "./TiltImage";
+import Spinner from "@/ui/components/spinner/Spinner";
 
 
 
@@ -28,7 +30,7 @@ function Home() {
                         </div>
                         <TiltImage />
                     </div>
-                    <LastProjectsHome />
+                   <Suspense fallback={<Spinner />}> <LastProjectsHome /></Suspense>
                     <div className="row">
                         <div className={`col-md-12 d-flex flex-column text-center justify-content-center text-white `}>
                             <h1>TROUVEZ MOI SUR</h1>
