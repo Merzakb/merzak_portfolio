@@ -2,6 +2,9 @@ import Link from 'next/link';
 import { AiOutlineDownload } from "react-icons/ai";
 import PDFViewer from "@/ui/components/pdf/PDFViewer"
 
+export const metadata = {
+    title: 'Mon CV',
+};
 
 function CvPage() {
     return (

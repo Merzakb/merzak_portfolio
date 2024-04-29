@@ -18,7 +18,7 @@ function Home() {
                 <div className="container">
                     <div className="row mb-5">
                         <div className={`col-md-8 text-white text-wrap order-md-1`}>
-                            <h1 style={{ fontSize: "2.6em" }}>
+                            <h1 className="fs-1">
                                 PERMETTEZ-MOI DE ME<span className="text-secondary"> PRÉSENTER </span>
                             </h1>
                             <p className="fs-5 my-2 text-break lh-base"> 

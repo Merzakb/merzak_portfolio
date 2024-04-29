@@ -1,6 +1,10 @@
 import React from 'react'
 import Contact from "@/ui/components/contact/Contact.jsx"
 
+export const metadata = {
+    title: 'Contact',
+};
+
 const Page = () => {
     return (
         <div className='text-white row d-flex justify-content-center py-5 container-fluid'>

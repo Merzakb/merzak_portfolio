@@ -11,6 +11,24 @@ import { syne } from '@/ui/assets/fonts/fonts';
 import PDFViewer from "@/ui/components/pdf/PDFViewer"
 import Spinner from '@/ui/components/spinner/Spinner';
 
+export async function generateMetadata({params}) {
+    const transformFromSlug = (slug) => {
+        return slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    }
+    const slug = params.name
+    const name = transformFromSlug(slug);
+    
+    const project = await fetchProjectByName(name)
+
+    if (!project) {
+        notFound()
+    }
+    return  {
+        title: project.name,
+        description: project.title
+    }
+}
+
 async function projectDetailsPage({params})  {
     // Transforme le slug en nom de projet réel
     const transformFromSlug = (slug) => {
@@ -51,7 +69,7 @@ async function projectDetailsPage({params})  {
                         < FaArrowLeft className='text-primary' />
                 </Link>
            </div>
-            <Suspense fallback={<Suspense />} >
+            <Suspense fallback={<Spinner />} >
                 <article  className='container my-5 row justify-content-center col-sm-11 col-lg-10'>
                     <div className={`card mb-5 p-0 border-0`} >
                         <div className="row bg-dark">

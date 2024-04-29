@@ -20,7 +20,7 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url, 
     
     return (
         <div className={`card ${styles.projectCardView}`}>
-            <Image src={images[0]} alt="card-img" width={330} height={220} priority  className="card-img-top p-3"/>
+            <Image src={images[0]} alt="card-img" width={330} height={220} priority  className="card-img-top rounded-top p-md-3"/>
             <div className="card-body row">
                 <h2 className={`card-title text-uppercase text-secondary fw-bold mb-0 ${syne.className}`}>{name}</h2>
                 <p className="text-tertiary fs-6 pt-0 mt-0 mb-3">{formattedDate}</p>

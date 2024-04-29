@@ -6,6 +6,10 @@ import Toolstack from "@/ui/components/about/Toolstack";
 import  Github  from "@/ui/components/about/Github";
 import laptopImg from "@/ui/assets/about.png";
 
+export const metadata = {
+    title: 'À Propos',
+};
+
 function AboutPage() {
     return (
         <div className="container about-section text-white px-0 my-5 py-5">

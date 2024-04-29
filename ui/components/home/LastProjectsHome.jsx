@@ -9,15 +9,15 @@ async function LastProjectsHome() {
     const recentProjects = projects.slice(0, 3); 
 
     return (
-        <div className="container-fluid container-xl text-white project-section py-5 my-5">
-            <div className="justify-content-center">
+        <div className="container-fluid container-xl text-white project-section py-5 my-5 mx-0 px-0">
+            <div className="justify-content-center px-0">
                 <h1 className="project-heading text-center">
                     Mes derniers <strong className="text-secondary">Projets</strong>
                 </h1>
                 <div className="row justify-content-center m-0">
                     <div className="row justify-content-center mx-0 my-2">
                         {recentProjects.map((project) => (
-                            <div key={project.id} className={`col-sm-12 col-md-6 col-xl-4 p-4 ${styles.projectCard}`}>
+                            <div key={project.id} className={`col-sm-12 col-md-6 col-xl-4 my-4 p-md-4 ${styles.projectCard}`}>
                                 <CardProject {...project} />
                             </div>
                         ))}

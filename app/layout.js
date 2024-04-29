@@ -7,11 +7,40 @@ import Footer from '@/ui/components/footer/Footer';
 import BackToTop from "@/ui/components/navigation/BackToTop"
 
 export const metadata = {
-  title: "Merzak Benaissi | Portfolio",
-  description: "Porfolio de Merzak Benaissi, développeur web frontend, React, Next.js, Bootstrap, Tailwind",
-  icons: {
-    icon: "./favicon.ico",
-  },
+    metadataBase: new URL('https://merzak-portfolio.vercel.app'),
+    alternates: {
+        canonical: '/',
+        languages: {
+        'fr-FR': '/fr-FR',
+        },
+    },
+    robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+    },
+    icons: {
+        icon: '/icon.png',
+        shortcut: '/icon.png',
+        apple: '/apple-icon.png',
+    },
+    openGraph: {
+        images: '/og-image.png',
+    },
+    keywords: ['Frontend developer', 'intégrateur web Strsabourg', 'intégrateur web Lyon', 'intégrateur web Paris', 'Next.js', 'React', 'JavaScript'],
+    title: {
+        template: '%s | Merzak Benaissi',
+        default: 'Merzak Benaissi | Portfolio',
+      },
+    description: "Porfolio de Merzak Benaissi, développeur web frontend, intégrateur web Javascript, React, Next.js, Bootstrap, Tailwind",
 };
 
 export default function RootLayout({ children }) {
