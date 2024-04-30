@@ -1,0 +1,72 @@
+$breakpoints: (
+    small: 48rem, //768px
+    medium: 64rem, //1024px
+);
+
+//small screen
+@mixin small-screen {
+    @media screen and (max-width: map-get($breakpoints, small)){
+        @content;
+    }
+};
+
+ //medium screen
+ @mixin medium-screen {
+    @media screen and (min-width: map-get($breakpoints, small)) and (max-width: map-get($breakpoints, medium)){
+        @content;
+    }
+};
+
+//large screen
+@mixin large-screen {
+    @media screen and (min-width: map-get($breakpoints, medium)){
+        @content;
+    }
+};
+
+.slide{
+    position: relative;
+    width: 100%;
+    height: 25.9375rem;
+
+    @include small-screen{
+        height: auto;
+    }
+    
+    &__image{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__dots{
+        position: absolute;
+        font-size: 1.125rem;
+        color: #f4af1b;
+        bottom: 2rem;
+        left: 40%;
+        bottom: 5%;
+        @include small-screen{
+            font-size: 0.875rem;
+        }
+    }
+
+    .arrow{
+        position: absolute;
+        top: 40%;
+        cursor: pointer;
+        color: #f4af1b;
+        width: 2.9175rem;
+        height: 4.95rem;
+        @include small-screen{
+            height: 1.5rem;
+            width: 1.0rem;
+        }
+    }
+    .arrow-left{
+        left: 1rem;
+    }
+
+    .arrow-right{
+        right: 1rem;
+    }
+}

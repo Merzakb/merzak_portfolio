@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { fetchProjectByName } from '@/backend/data' 
-import Image from 'next/image'
 import Link from 'next/link';
 import { AiFillGithub } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
@@ -10,6 +9,7 @@ import styles from './page.module.css'
 import { syne } from '@/ui/assets/fonts/fonts';
 import PDFViewer from "@/ui/components/pdf/PDFViewer"
 import Spinner from '@/ui/components/spinner/Spinner';
+import Slide from '@/ui/components/slider/Slider';
 
 export async function generateMetadata({params}) {
     const transformFromSlug = (slug) => {
@@ -62,7 +62,7 @@ async function projectDetailsPage({params})  {
     } 
 
     return (
-        <div className='container-fluid row justify-content-center py-5'>
+        <div className='container-fluid row justify-content-center pb-5'>
            <div className='d-none d-lg-block mb-3 fixed-top mt-5 pt-5'>
                 <Link href="/projects" className='bg-secondary rounded-circle p-2'>
                         <span className="visually-hidden-focusable">Retour</span>
@@ -70,17 +70,67 @@ async function projectDetailsPage({params})  {
                 </Link>
            </div>
             <Suspense fallback={<Spinner />} >
-                <article  className='container my-5 row justify-content-center col-sm-11 col-lg-10'>
+                <article className='container mb-5 row justify-content-center mx-md-5 px-md-5 mt-5'>
+                    {/* <div className={`${styles.cardImage} bg-dark  slider-container mt-5 mb-3 mx-lg-5 px-lg-5`}>
+                        <Slide images={project.images}/>
+                    </div>
+                    <div className={`${styles.cardBody} row bg-dark text-white mb-5`}>
+                        <div className='col-md-6'>
+                            <h1 className={`card-title text-uppercase text-secondary fw-bold ${syne.className}`}>{project.name}</h1>
+                            <p className="text-tertiary fs-6 pt-0 mt-0 mb-3">{formattedDate}</p>
+                            <div className="text-start my-2">
+                                {project.technologies.map((tech, index) => (
+                                    <span key={index} className="badge bg-white text-primary me-2 mb-2">
+                                        {tech.charAt(0).toUpperCase() + tech.slice(1)}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                        <div className='col-md-6'>
+                            <h2 className="card-text fs-3">{project.title}</h2>
+                        </div>
+                        <div className=''>
+                            <div className="d-flex flex-wrap justify-content-md-end">
+                                {project.github_url && (
+                                    <div className="mt-2">
+                                        <a 
+                                            href={project.github_url} 
+                                            className="btn btn-secondary text-primary fw-bold" 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <AiFillGithub />
+                                            &nbsp; {"Github"}
+                                        </a>
+                                    </div>
+                                )}
+                                {project.demo_url && (
+                                    <div className="ms-2 mt-2">
+                                        <a
+                                            href={project.demo_url}
+                                            className="btn btn-secondary text-primary fw-bold" 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <CgWebsite />
+                                            &nbsp; {"Demo"}
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div> */}
+                    
                     <div className={`card mb-5 p-0 border-0`} >
                         <div className="row bg-dark">
-                            <div  className={`${styles.cardImage} col-md-6 bg-dark row justify-content-center`}>
-                                <Image src={project.images[0]}  alt="card-img" width={400} height={320} priority className='bg-dark'/>
+                            <div  className={`${styles.cardImage} col-lg-8 bg-dark row justify-content-center px-0 px-lg-1 mx-0`}>
+                                <Slide images={project.images} />
                             </div>
-                            <div className={`${styles.cardBody} col-md-6 bg-dark text-white`}>
-                                <div className="card-body">
-                                    <h1 className={`card-title text-uppercase text-secondary fw-bold ${syne.className}`}>{project.name}</h1>
+                            <div className={`${styles.cardBody} col-lg-4 bg-dark text-white px-0`}>
+                                <div className="card-body px-1">
+                                    <h1 className={`card-title text-uppercase text-secondary fs-2 fw-bold ${syne.className}`}>{project.name}</h1>
                                     <p className="text-tertiary fs-6 pt-0 mt-0 mb-3">{formattedDate}</p>
-                                    <h2 className="card-text">{project.title}</h2>
+                                    <h2 className="card-text fs-3">{project.title}</h2>
                                     <div className="text-start my-2">
                                         {project.technologies.map((tech, index) => (
                                             <span key={index} className="badge bg-white text-primary me-2 mb-2">
@@ -88,7 +138,7 @@ async function projectDetailsPage({params})  {
                                             </span>
                                         ))}
                                     </div>
-                                    <div className="d-flex flex-wrap justify-content-end">
+                                    <div className="d-flex flex-wrap justify-content-start">
                                         {project.github_url && (
                                             <div className="mt-2">
                                                 <a 
