@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+	position: relative;
+    transition: all .5s ease-in;
+    width: 300px;
+    height: 300px;
+    flex-shrink: 1;
+    align-self: center; 
+    margin:10px;
+}
+
+@media (max-width: 1400px) {
+    .card {
+      width: 100%;
+      height: auto;
+      
+    }
+}
+
+.card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: none;
+  transition: .5s ease;
+  background-color: #f4af1b;
+}
+
+.card:hover .card__overlay {
+  opacity: .9;
+}
