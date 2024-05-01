@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { IoMdArrowRoundForward } from "react-icons/io";
 import HomeProjectCard from "./HomeProjectCard";
 import { fetchRecentProjects } from "@/backend/data";
+import styles from './home.module.css';
 
 async function LastProjectsHome() {
     const projects = await fetchRecentProjects();
@@ -23,8 +24,8 @@ async function LastProjectsHome() {
                         ))}
                     </div>
                </div>
-                <p className="text-end pe-md-5 me-md-5">
-                    <span className={`btn fw-bolder bg-secondary rounded p-1`}><Link href="/projects"  className={`text-decoration-none text-primary`}>plus de projets <IoMdArrowRoundForward /></Link></span>
+                <p className={`text-end pe-md-5 me-md-5  `}>
+                    <span className={`btn fw-bolder bg-secondary rounded p-1 ${styles.link}`}><Link href="/projects"  className={`text-decoration-none text-primary`}>plus de projets <IoMdArrowRoundForward /></Link></span>
                 </p>
             </div>
         </div>

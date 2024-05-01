@@ -143,7 +143,7 @@ async function projectDetailsPage({params})  {
                                             <div className="mt-2">
                                                 <a 
                                                     href={project.github_url} 
-                                                    className="btn btn-secondary text-primary fw-bold" 
+                                                    className={`btn btn-secondary text-primary fw-bold ${styles.link}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
@@ -156,7 +156,7 @@ async function projectDetailsPage({params})  {
                                             <div className="ms-2 mt-2">
                                                 <a
                                                     href={project.demo_url}
-                                                    className="btn btn-secondary text-primary fw-bold" 
+                                                    className={`btn btn-secondary text-primary fw-bold ${styles.link}`}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >

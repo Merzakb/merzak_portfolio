@@ -2,10 +2,11 @@ import React from "react";
 import Image from 'next/image';
 import homeLogo from "../../assets/home-main.svg";
 import styles from './hero-header.module.css'; 
+import TypeWriter from "./Typewriter";
 
 function HeroHeader() {
   return (
-    <section className={`bg-primary pt-5 ${styles.gradientBackground}`}> 
+    <section className={`pt-5`}> 
       <div className={styles.homeSection} id="home">
         <div className={`container ${styles.homeContent}`}> 
           <div className="row">
@@ -15,14 +16,15 @@ function HeroHeader() {
                     <span className={`wave hero-header_wave__QaeUb ${styles.wave}`} role="img" aria-labelledby="wave" id="wave"> 
                     👋🏻
                     </span>
-                    <span id="wave-label" className="visually-hidden-focusable">Main greeting wave emoji</span>
+                    <span id="wave-label" className="visually-hidden-focusable">emoji d'une main qui fait un geste de salutation</span>
                 </h1>
-                <h1 className={`heading-name pb-5 ${styles.headingName}`}> 
+                <h1 className={`fs-1 pb-5`}> 
                     je suis
-                    <strong className={`text-secondary main-name ${styles.mainName}`}> Merzak BENAISSI</strong> 
+                    <strong className={`text-secondary`}> Merzak BENAISSI</strong> 
                 </h1>
-                <div className={`my-5 d-flex justify-content-end ${styles.typewriterWrapper}`} > 
-                    <h1 className="text-secondary">Développeur web frontend</h1>
+                <div className={`my-5 d-flex justify-content-sm-end `} > 
+                    <TypeWriter />
+                    {/* <h1 className="text-secondary">Développeur web frontend</h1> */}
                 </div>
             </div>
 

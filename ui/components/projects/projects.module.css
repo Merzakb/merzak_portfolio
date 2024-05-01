@@ -12,3 +12,8 @@
     overflow: hidden !important;
     box-shadow: 0 8px 9px 7px rgba(244, 175, 27, 0.5) !important;
 }
+
+.link:hover {
+    color: #6dd47e;
+    box-shadow: 0 0 8px #6dd47e;
+}

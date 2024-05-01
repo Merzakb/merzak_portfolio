@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from '@/ui/components/header/Header';
 import Footer from '@/ui/components/footer/Footer';
 import BackToTop from "@/ui/components/navigation/BackToTop"
+import ParticlesComponent from '@/ui/components/particles/ParticlesComponent';
 
 export const metadata = {
     metadataBase: new URL('https://merzak-portfolio.vercel.app'),
@@ -56,8 +57,10 @@ export default function RootLayout({ children }) {
         </Head>
         <body className={`bg-dark ${montserrat.className}`}>
             <Header />
-            <main className='pb-5 m-0  row justify-content-center align-items-stretch min-vh-100'>
-                {children}
+            <main className='pb-5 m-0  row justify-content-center align-items-stretch min-vh-100 layout-main'>
+            <div id="tsparticles" ><ParticlesComponent/></div>
+               <div className='layout_children'> {children}</div>
+               
             </main>
             <BackToTop />
             <Footer />

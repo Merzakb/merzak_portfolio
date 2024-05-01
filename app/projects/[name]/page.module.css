@@ -50,3 +50,8 @@
       transform: translateY(0);
     }
 }
+
+.link:hover {
+    color: #6dd47e;
+    box-shadow: 0 0 8px #6dd47e;
+}

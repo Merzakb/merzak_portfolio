@@ -34,10 +34,10 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url, 
                 </div>
                 <div className="d-flex flex-wrap justify-content-center">
                     {github_url && (
-                        <div className="mt-2">
+                        <div className={`mt-2`}>
                             <a 
                                 href={github_url} 
-                                className="btn btn-secondary text-primary fw-bold" 
+                                className={`btn btn-secondary text-primary fw-bold ${styles.link}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -50,7 +50,7 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url, 
                         <div className="ms-2 mt-2">
                             <a
                                 href={demo_url}
-                                className="btn btn-secondary text-primary fw-bold" 
+                                className={`btn btn-secondary text-primary fw-bold ${styles.link}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -61,7 +61,7 @@ function ProjectCards({name, title, images, technologies, github_url, demo_url, 
                     )}
                 </div>
                 <div className="mt-5 text-end align-self-end">
-                    <Link href={`/projects/${formattedName}`} className="btn btn-tertiary text-primary">
+                    <Link href={`/projects/${formattedName}`}  className={`btn btn-light text-black  ${styles.link}`}>
                         plus d&apos;infos...
                     </Link>
                 </div>
