@@ -28,7 +28,7 @@ const BackToTop = () => {
   }, []);
 
     return (
-        <div className="d-none d-sm-block position-fixed bottom-0 end-0  mb-5 pb-5 me-0 me-md-1">
+        <div className="d-none d-sm-block position-fixed bottom-0 end-0  mb-5 pb-5 me-0 me-md-1 backToTop">
             <span
                 id="backToTopButton"
                 className="opacity-0 p-3 bg-transparent mb-5 pb-5"
