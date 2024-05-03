@@ -41,7 +41,7 @@ const Contact = () => {
         }
         
         emailjs.init({
-            publicKey: "3LkPX_sSrg_pCGcGX",
+            publicKey: "S_Hy2rD4N4VuXiSSU",
         });
 
         emailjs
