@@ -1,71 +1,41 @@
-'use client';
+"use client"
 
-import { FaSearch } from "react-icons/fa";
+import React from 'react';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
-import { useDebouncedCallback } from 'use-debounce';
 
-export default function Search({ placeholder }) {
+export default function Search({ technologies }) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const { replace } = useRouter();
 
-    const handleSearch = useDebouncedCallback((term) => {
+    const handleSearch = (term) => {
         const params = new URLSearchParams(searchParams);
-      //  params.set('page', '1');
-        if (term) {
-          params.set('query', term);
-          console.log(term);
+
+        // Vérifier si la technologie est déjà présente dans l'URL
+        const isTechnologyInUrl = params.get('query') === term;
+
+        if (isTechnologyInUrl) {
+            // Si la technologie est déjà présente, supprimer-la de l'URL
+            params.delete('query');
         } else {
-          params.delete('query');
+            // Sinon, ajouter la technologie à l'URL
+            params.set('query', term);
         }
+
         replace(`${pathname}?${params.toString()}`);
-    }, 300);
+    };
 
     return (
-        <div className="input-group container justify-content-center">
-           <div className="col-6 d-flex rounded">
-                <input 
-                    type="search" 
-                    className="form-control " 
-                    placeholder={placeholder} 
-                    aria-label="Search" 
-                    aria-describedby="search-addon" 
-                    onChange={(e) => {
-                        handleSearch(e.target.value);
-                    }}
-                    defaultValue={searchParams.get('query')?.toString()}
-                />
-                <span className="input-group-text border-0 bg-secondary" id="search-addon">
-                    <FaSearch className="" />
-                </span>
-           </div>
+        <div className="container d-flex justify-content-center flex-wrap">
+            {technologies.map((technology, index) => (
+                <button
+                    key={index}
+                    onClick={() => handleSearch(technology)}
+                    className={searchParams.get('query') === technology ? 'active btn btn-secondary m-1' : 'btn btn-light m-1'}
+                >
+                    {technology}
+                </button>
+            ))}
         </div>
-        // <div className="d-flex flex-row">
-        //     <label htmlFor="search" className="visually-hidden">
-        //         Search
-        //     </label>
-        //     <input
-        //         type="text"
-        //         id="search"
-        //         className="form-control rounded-md border border-secondary py-2 pl-4 pe-1 fs-5 "
-        //         placeholder={placeholder}
-        //         onChange={(e) => {
-        //             handleSearch(e.target.value);
-        //         }}
-        //         defaultValue={searchParams.get('query')?.toString()}
-        //     />
-        //     <FaSearch className="" />
-        // </div>
     );
 }
-
-/**
- 
-
-<div className="input-group rounded">
-  <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <span className="input-group-text border-0" id="search-addon">
-    <i className="fas fa-search"></i>
-  </span>
-</div>
- */
