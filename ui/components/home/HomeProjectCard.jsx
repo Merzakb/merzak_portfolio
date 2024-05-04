@@ -11,8 +11,8 @@ function HomeProjectCard({name, title, projectcard}) {
 
     return (
        <div className={`${styles.card} card border-0 col`}>
+            <Image src={projectcard} alt={`image de la page d'accueil du projet ${name}`} width={500} height={500} priority className={`${styles.card__image}`} />
             <Link href={`/projects/${formattedName}`}>
-                <Image src={projectcard} alt="card-img" width={500} height={500} priority className={`${styles.card__image}`} />
                 <div className={`${styles.card__overlay}`}>
                     <div  className={`${styles.overlay__text} p-3 text-center text-black fw-bold `}>
                         <h2 className={`card-title text-uppercase text-dark fs-1 fw-bold mb-5 d-none d-sm-block ${syne.className}`}>{name}</h2>

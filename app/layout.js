@@ -1,5 +1,6 @@
 import { montserrat, syne } from '@/ui/assets/fonts/fonts';
 import Head from 'next/head';
+import Script from 'next/script';
 import '@/ui/styles/scss/globals.scss'
 import "./globals.css";
 import Header from '@/ui/components/header/Header';
@@ -8,7 +9,7 @@ import BackToTop from "@/ui/components/navigation/BackToTop"
 import ParticlesComponent from '@/ui/components/particles/ParticlesComponent';
 
 export const metadata = {
-    metadataBase: new URL('https://merzak-portfolio.vercel.app'),
+    metadataBase: new URL('https://merzakbenaissi.eu'),
     alternates: {
         canonical: '/',
         languages: {
@@ -43,6 +44,26 @@ export const metadata = {
       },
     description: "Porfolio de Merzak Benaissi, développeur web frontend, intégrateur web Javascript, React, Next.js, Bootstrap, Tailwind",
 };
+export const schemaOrgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Merzak Benaissi",
+    "url": "https://merzakbenaissi.eu",
+    "image": "https://merzakbenaissi.eu/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white-yellow.4c728e6d.png&w=640&q=75",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Strasbourg",
+      "addressCountry": "FR"
+    },
+    "jobTitle": "Développeur Web Frontend",
+    "alumniOf": "OpenClassrooms",
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Next.js", "Bootstrap"],
+    "sameAs": [
+      "https://twitter.com/__merzak",
+      "https://www.linkedin.com/in/merzak-b-0300b9289/",
+      "https://twitter.com/__merzak"
+    ]
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -55,6 +76,12 @@ export default function RootLayout({ children }) {
               crossOrigin="anonymous"
             />
         </Head>
+        <Script 
+            id="schema-org-json-ld" 
+            type="application/ld+json" 
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrgJsonLd) }}
+            strategy="afterInteractive"
+        />
         <body className={`bg-dark ${montserrat.className}`}>
             <Header />
             <main className='pb-5 m-0  row justify-content-center align-items-stretch min-vh-100 layout-main'>

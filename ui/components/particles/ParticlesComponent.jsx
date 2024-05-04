@@ -22,7 +22,6 @@ const ParticlesComponent = () => {
     }, []);
 
     const particlesLoaded = (container) => {
-        console.log(container);
     };
 
     return (

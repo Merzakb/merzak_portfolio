@@ -25,7 +25,11 @@ export async function generateMetadata({params}) {
     }
     return  {
         title: project.name,
-        description: project.title
+        description: project.title,
+        openGraph: {
+            images:  project.projectcard 
+        },
+        keywords: project.technologies
     }
 }
 
