@@ -3,11 +3,11 @@ import { AiFillGithub } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from "./projects.module.css"
+import styles from "./projectCard.module.css"
 import { syne } from '@/ui/assets/fonts/fonts';
 
 
-function ProjectCards({name, title, images, technologies, github_url, demo_url, createdat, projectcard}) {
+function ProjectCards({name, title, technologies, github_url, demo_url, createdat, projectcard}) {
     // Supprimer les espaces du nom
     const formattedName = name.replace(/\s+/g, '-');
 

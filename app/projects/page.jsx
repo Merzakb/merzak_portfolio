@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const Page = async  ({searchParams}) => {
-    const technologies = await fetchAllTechnologies ()
+    const technologies = await fetchAllTechnologies()
     const query = searchParams?.query || '';
     return (
         <div className='mt-5 py-5'>

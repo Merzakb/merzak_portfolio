@@ -75,56 +75,6 @@ async function projectDetailsPage({params})  {
            </div>
             <Suspense fallback={<Spinner />} >
                 <article className='container mb-5 row justify-content-center mx-md-5 px-md-5 mt-5'>
-                    {/* <div className={`${styles.cardImage} bg-dark  slider-container mt-5 mb-3 mx-lg-5 px-lg-5`}>
-                        <Slide images={project.images}/>
-                    </div>
-                    <div className={`${styles.cardBody} row bg-dark text-white mb-5`}>
-                        <div className='col-md-6'>
-                            <h1 className={`card-title text-uppercase text-secondary fw-bold ${syne.className}`}>{project.name}</h1>
-                            <p className="text-tertiary fs-6 pt-0 mt-0 mb-3">{formattedDate}</p>
-                            <div className="text-start my-2">
-                                {project.technologies.map((tech, index) => (
-                                    <span key={index} className="badge bg-white text-primary me-2 mb-2">
-                                        {tech.charAt(0).toUpperCase() + tech.slice(1)}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className='col-md-6'>
-                            <h2 className="card-text fs-3">{project.title}</h2>
-                        </div>
-                        <div className=''>
-                            <div className="d-flex flex-wrap justify-content-md-end">
-                                {project.github_url && (
-                                    <div className="mt-2">
-                                        <a 
-                                            href={project.github_url} 
-                                            className="btn btn-secondary text-primary fw-bold" 
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <AiFillGithub />
-                                            &nbsp; {"Github"}
-                                        </a>
-                                    </div>
-                                )}
-                                {project.demo_url && (
-                                    <div className="ms-2 mt-2">
-                                        <a
-                                            href={project.demo_url}
-                                            className="btn btn-secondary text-primary fw-bold" 
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <CgWebsite />
-                                            &nbsp; {"Demo"}
-                                        </a>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div> */}
-                    
                     <div className={`card mb-5 p-0 border-0`} >
                         <div className="row bg-dark">
                             <div  className={`${styles.cardImage} col-lg-8 bg-dark row justify-content-center px-0 px-lg-1 mx-0`}>
