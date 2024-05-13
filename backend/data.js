@@ -102,6 +102,7 @@ export async function fetchProjectByName(name) {
  * @throws {Error} If there's an error fetching the technologies.
  */
 export async function fetchAllTechnologies() {
+    noStore()
     try {
         const data = await sql`
             SELECT DISTINCT UNNEST(technologies) as technology

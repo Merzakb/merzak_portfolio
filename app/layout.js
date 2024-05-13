@@ -42,7 +42,7 @@ export const metadata = {
         template: '%s | Merzak Benaissi',
         default: 'Merzak Benaissi | Portfolio',
       },
-    description: "Porfolio de Merzak Benaissi, développeur web frontend, intégrateur web Javascript, React, Next.js, Bootstrap, Tailwind",
+    description: "Portfolio de Merzak Benaissi, intégrateur web Javascript, développeur web frontend, React, Next.js, Javascript, Bootstrap... à Strasbourg France",
 };
 export const schemaOrgJsonLd = {
     "@context": "https://schema.org",
