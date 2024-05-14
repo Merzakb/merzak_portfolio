@@ -66,7 +66,7 @@ async function projectDetailsPage({params})  {
     } 
 
     return (
-        <div className='container-fluid row justify-content-center pb-5'>
+        <div className='container-fluid container-xl justify-content-center pb-5'>
            <div className='d-none d-lg-block mb-3 fixed-top mt-5 pt-5'>
                 <Link href="/projects" className='bg-secondary rounded-circle p-2'>
                         <span className="visually-hidden-focusable">Retour</span>
